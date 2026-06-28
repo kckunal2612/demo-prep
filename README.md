@@ -6,18 +6,25 @@ Engineers lose context between demos. `demo-prep` reads your commits, PRs, and i
 
 ## Install
 
+### Claude Code
+
+```
+/plugin marketplace add kckunal2612/demo-prep
+/plugin install demo-prep@demo-prep
+```
+
+Or via curl (installs commands directly into `~/.claude/commands/`):
 ```bash
 curl -fsSL https://raw.githubusercontent.com/kckunal2612/demo-prep/main/install.sh | bash
 ```
 
-Or clone and run locally:
+### Codex
+
 ```bash
-git clone https://github.com/kckunal2612/demo-prep
-cd demo-prep
-bash install.sh
+codex plugin marketplace add kckunal2612/demo-prep
 ```
 
-This copies `/demo-prep`, `/demo-prep-tech`, and `/demo-prep-pick` into `~/.claude/commands/`.
+Then open `/plugins` in Codex, select the demo-prep marketplace, and install.
 
 ## Commands
 

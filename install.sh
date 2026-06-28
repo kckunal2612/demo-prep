@@ -46,13 +46,7 @@ $(skill_body)
 EOF
 
 echo "✓ Claude Code: /demo-prep, /demo-prep-tech, /demo-prep-pick installed."
-
-# Codex — only if CLI is present
-if command -v codex &>/dev/null; then
-  CODEX_SKILLS_DIR="$HOME/.codex/skills/demo-prep"
-  mkdir -p "$CODEX_SKILLS_DIR"
-  cp "$SCRIPT_DIR/skills/demo-prep/SKILL.md" "$CODEX_SKILLS_DIR/SKILL.md"
-  echo "✓ Codex: skill installed."
-else
-  echo "  Codex CLI not found — skipping Codex install."
-fi
+echo ""
+echo "To install via Codex, run:"
+echo "  codex plugin marketplace add kckunal2612/demo-prep"
+echo "  Then open /plugins in Codex and install demo-prep."
