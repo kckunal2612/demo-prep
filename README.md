@@ -6,23 +6,18 @@ Engineers lose context between demos. `demo-prep` reads your commits, PRs, and i
 
 ## Install
 
-**Claude Code**
 ```bash
-claude plugin install github:kunalchawla/demo-prep
+curl -fsSL https://raw.githubusercontent.com/kckunal2612/demo-prep/main/install.sh | bash
 ```
 
-**Codex**
+Or clone and run locally:
 ```bash
-codex plugin install github:kunalchawla/demo-prep
-```
-
-Or clone and install locally for either tool:
-```bash
-git clone https://github.com/kunalchawla/demo-prep
+git clone https://github.com/kckunal2612/demo-prep
 cd demo-prep
-claude plugin install .   # Claude Code
-codex plugin install .    # Codex
+bash install.sh
 ```
+
+This copies `/demo-prep`, `/demo-prep-tech`, and `/demo-prep-pick` into `~/.claude/commands/`.
 
 ## Commands
 
