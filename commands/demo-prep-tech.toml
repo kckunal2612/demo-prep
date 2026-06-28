@@ -1,12 +1,2 @@
-description = "Generate a demo deck at a specific technical depth: high, medium, or low"
-prompt = """
-Run the demo-prep skill with technical depth pre-set to {{args}} (default: medium if not specified).
-
-Skip the audience question — the user has already decided the depth:
-- high: include architecture decisions, performance numbers, implementation details, technical tradeoffs
-- medium: outcomes + one sentence of how, no deep implementation detail
-- low: outcomes only, plain English, zero jargon, as if explaining to someone outside engineering
-
-Still ask: "Is there one thing you want to highlight, or cover everything?"
-Then gather the work and generate the deck accordingly.
-"""
+description = "Generate a demo deck at a set technical depth: high, medium, or low"
+prompt = "Run demo-prep with technical depth set to {{args}} (default: medium). Skip the audience question. Still ask what to focus on, then generate the deck."
