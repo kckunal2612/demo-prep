@@ -102,6 +102,8 @@ Pick a theme when prompted — or just hit enter for the default.
 
 `claude-code` and `codex` are purpose-built for AI tool demos and internal eng reviews. They look sharp on dark-mode monitors and match the aesthetic your audience is already used to.
 
+![Theme picker showing claude-code selected with color spec preview](docs/screenshot-theme-picker.png)
+
 ---
 
 ## ⚙️ How it works
