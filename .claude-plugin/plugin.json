@@ -1,0 +1,9 @@
+{
+  "name": "demo-prep",
+  "version": "1.0.0",
+  "description": "Turns your git history into a demo-ready slide deck. Reads commits, PRs, and issues since your last demo, optionally captures screenshots, and generates a .pptx presentation.",
+  "author": {
+    "name": "Kunal Chawla",
+    "url": "https://github.com/kunalchawla"
+  }
+}

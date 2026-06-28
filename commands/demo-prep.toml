@@ -1,0 +1,2 @@
+description = "Generate a slide deck summarizing your work since a date or tag"
+prompt = "Run the demo-prep skill. Optional start point: {{args}}. Gather git history, PRs, and issues since that point, categorize the work into features/fixes/infra, optionally capture screenshots of the running app, and generate a demo-YYYY-MM-DD.pptx in the current directory."

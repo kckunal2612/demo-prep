@@ -1,12 +1,24 @@
 # demo-prep
 
-A Claude Code slash command that turns your git history into a demo-ready presentation.
+A Claude Code plugin that turns your git history into a demo-ready slide deck.
 
-Engineers lose context between demos. This skill reads your git log, PRs, and issues since your last demo, then generates a `.pptx` slide deck — a marketing tool for your own work.
+Engineers lose context between demos. `demo-prep` reads your commits, PRs, and issues since your last demo, then generates a `.pptx` presentation — a marketing tool for your own work.
+
+## Install
+
+```bash
+claude mcp install github:kunalchawla/demo-prep
+```
+
+Or clone and install locally:
+
+```bash
+git clone https://github.com/kunalchawla/demo-prep
+cd demo-prep
+claude mcp install .
+```
 
 ## Usage
-
-Copy `demo-prep.md` to `~/.claude/commands/demo-prep.md`, then run:
 
 ```
 /demo-prep
@@ -23,26 +35,19 @@ Or pass a specific start point:
 ## What it does
 
 1. **Detects the start point** — last `demo-*` tag → last version tag → 30 days ago. Tells you what it picked so you can override.
-2. **Reads git history** — commits, merged PRs, closed issues since that point
-3. **Categorizes** — features, fixes, infra/refactors
-4. **Optionally screenshots** — starts your local dev server and captures key screens (web projects only)
-5. **Generates a `.pptx`** — title slide, "what we shipped" overview, one slide per major feature, fixes summary, what's next
+2. **Reads your history** — commits, merged PRs, closed issues since that point
+3. **Categorizes** — features, fixes, infra/refactors, each in plain English
+4. **Screenshots** *(optional)* — starts your local dev server and captures key screens
+5. **Generates a `.pptx`** — title, "what we shipped" overview, one slide per major feature, fixes summary, what's next
 
-Output is saved as `demo-YYYY-MM-DD.pptx` in your project directory.
+Output: `demo-YYYY-MM-DD.pptx` in your project directory, ready to open in Keynote or PowerPoint.
 
 ## Requirements
 
 - [Claude Code](https://claude.ai/code)
 - `git`
-- `gh` CLI (optional — enables PR/issue details)
-- `pptx` skill (bundled with Claude Code)
-
-## Installation
-
-```bash
-cp demo-prep.md ~/.claude/commands/demo-prep.md
-```
+- `gh` CLI *(optional — enables PR and issue details)*
 
 ## License
 
-MIT
+MIT © Kunal Chawla
