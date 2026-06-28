@@ -41,7 +41,7 @@ Output: `demo-YYYY-MM-DD.pptx` in your project directory, ready to open in Keyno
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/code)
+- [Claude Code](https://claude.ai/code) and/or [Codex CLI](https://github.com/openai/codex)
 - `git`
 - `gh` CLI *(optional — enables PR and issue details)*
 

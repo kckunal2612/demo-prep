@@ -45,4 +45,14 @@ Run demo-prep in pick mode. Gather what was shipped, show a numbered list groupe
 $(skill_body)
 EOF
 
-echo "demo-prep installed. Commands available: /demo-prep, /demo-prep-tech, /demo-prep-pick"
+echo "✓ Claude Code: /demo-prep, /demo-prep-tech, /demo-prep-pick installed."
+
+# Codex — only if CLI is present
+if command -v codex &>/dev/null; then
+  CODEX_SKILLS_DIR="$HOME/.codex/skills/demo-prep"
+  mkdir -p "$CODEX_SKILLS_DIR"
+  cp "$SCRIPT_DIR/skills/demo-prep/SKILL.md" "$CODEX_SKILLS_DIR/SKILL.md"
+  echo "✓ Codex: skill installed."
+else
+  echo "  Codex CLI not found — skipping Codex install."
+fi
