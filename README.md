@@ -104,6 +104,8 @@ Pick a theme when prompted — or just hit enter for the default.
 
 ![Theme picker showing claude-code selected with color spec preview](docs/screenshot-theme-picker.png)
 
+![Slide deck in claude-code theme — dark background, orange titles, monospace body](docs/screenshot-claude-code-theme.png)
+
 ---
 
 ## ⚙️ How it works
