@@ -1,16 +1,18 @@
 {
   "name": "demo-prep",
   "version": "1.0.0",
-  "description": "Claude Code plugin that turns your git history into a demo-ready slide deck.",
+  "description": "Claude Code and Codex plugin that turns git history into a demo-ready slide deck.",
   "license": "MIT",
   "author": "Kunal Chawla",
-  "homepage": "https://github.com/kunalchawla/demo-prep",
+  "homepage": "https://github.com/kckunal2612/demo-prep",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kunalchawla/demo-prep.git"
+    "url": "git+https://github.com/kckunal2612/demo-prep.git"
   },
   "files": [
     ".claude-plugin/",
+    ".codex-plugin/",
+    ".agents/",
     "commands/",
     "skills/",
     "README.md",

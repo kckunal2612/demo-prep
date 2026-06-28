@@ -1,0 +1,20 @@
+{
+  "name": "demo-prep",
+  "interface": {
+    "displayName": "Demo Prep"
+  },
+  "plugins": [
+    {
+      "name": "demo-prep",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

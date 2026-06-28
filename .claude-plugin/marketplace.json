@@ -1,0 +1,32 @@
+{
+  "name": "demo-prep",
+  "owner": {
+    "name": "Kunal Chawla"
+  },
+  "description": "Demo preparation tools for engineering teams.",
+  "plugins": [
+    {
+      "name": "demo-prep",
+      "displayName": "Demo Prep",
+      "source": {
+        "source": "github",
+        "repo": "kckunal2612/demo-prep"
+      },
+      "description": "Turns git history into a demo-ready slide deck. Reads commits, PRs, and issues since a date or tag, asks what to focus on, and generates a tailored .pptx presentation.",
+      "author": {
+        "name": "Kunal Chawla"
+      },
+      "homepage": "https://github.com/kckunal2612/demo-prep",
+      "repository": "https://github.com/kckunal2612/demo-prep",
+      "license": "MIT",
+      "category": "Productivity",
+      "tags": [
+        "demo",
+        "presentation",
+        "git",
+        "slides",
+        "engineering"
+      ]
+    }
+  ]
+}
