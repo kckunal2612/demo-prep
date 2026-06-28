@@ -26,6 +26,22 @@ Engineers ship fast. Demo prep shouldn't slow them down. `demo-prep` is a Claude
 
 ---
 
+## Real-world example: GitHub CLI
+
+We ran `demo-prep` against [`cli/cli`](https://github.com/cli/cli) — one of GitHub's own most active repos — covering everything shipped in June 2026.
+
+```
+/demo-prep 2026-06-01
+```
+
+**8 slides. 2 minutes.**
+
+![demo-prep output for cli/cli — 8 slides in 2 minutes](docs/screenshot-cli-output.png)
+
+One command. No deck template to fill in. No time spent deciding what to cut.
+
+---
+
 ## Install
 
 ### Claude Code plugin
