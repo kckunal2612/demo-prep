@@ -74,28 +74,30 @@ Build the deck around that single feature. Everything else is supporting context
 - Use before/after framing if possible
 - Other shipped work goes on a single "also shipped" slide at most
 
+### Focus: specific items (pick mode)
+Only include what the user selected. Don't mention anything else — not even as an aside. If they picked 2 things, the deck is about those 2 things.
+
 ### Focus: everything
 Group work into features, fixes, and infra. Keep it scannable — no more than 8 bullets total on the overview slide. Drop anything that won't mean anything to the audience.
 
-### Audience: engineers
-- Can use technical terms, architecture decisions, performance numbers
+### Technical depth
+
+**High** — the audience is engineers or technical stakeholders
+- Architecture decisions, performance numbers, implementation tradeoffs are all fair game
 - "We migrated from X to Y, cutting p99 latency by 40%" is meaningful
-- Implementation slides are OK
+- Can name specific technologies, patterns, libraries
 
-### Audience: product / design
-- Focus on user-facing outcomes: "users can now do X"
-- Skip implementation details entirely
-- Screenshots and flows over architecture diagrams
+**Medium** — mixed audience, or product/design
+- Lead with outcomes, offer one sentence of "how" per feature
+- "We rebuilt the search index — results now load in under 100ms" is the right level
+- Skip implementation details, but a high-level technical callout is OK
 
-### Audience: execs / leadership
-- Lead with business impact: time saved, errors reduced, velocity unlocked
-- One sentence per feature max — they're reading at a glance
-- "What's next" matters more here than "what we fixed"
-
-### Audience: mixed
-- Use plain English throughout, no jargon
-- Lead with the outcome, offer one technical detail as a "how we did it" callout
-- Keep it short — mixed audiences have mixed attention spans
+**Low** — execs, non-technical stakeholders, or all-hands
+- Outcomes only, zero jargon, plain English throughout
+- "Search is now instant" not "we optimized the query pipeline"
+- Business impact framing: time saved, errors reduced, users unblocked
+- "What's next" matters more here than anything else
+- One sentence per feature max
 
 ## Step 5 — Screenshots (web projects only)
 

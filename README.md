@@ -18,27 +18,23 @@ cd demo-prep
 claude mcp install .
 ```
 
-## Usage
+## Commands
 
-```
-/demo-prep
-```
-
-Or pass a specific start point:
-
-```
-/demo-prep 2026-05-01
-/demo-prep v1.2.0
-/demo-prep demo-2026-05-30
-```
+| Command | What it does |
+|---|---|
+| `/demo-prep` | Full interactive flow — asks what to focus on and who the audience is |
+| `/demo-prep 2026-05-01` | Same, but starting from a specific date or git tag |
+| `/demo-prep-tech high` | Skips the audience question, sets technical depth directly (`high` / `medium` / `low`) |
+| `/demo-prep-pick` | Shows everything shipped as a numbered list — you choose what goes in the deck |
 
 ## What it does
 
 1. **Detects the start point** — last `demo-*` tag → last version tag → 30 days ago. Tells you what it picked so you can override.
 2. **Reads your history** — commits, merged PRs, closed issues since that point
-3. **Categorizes** — features, fixes, infra/refactors, each in plain English
-4. **Screenshots** *(optional)* — starts your local dev server and captures key screens
-5. **Generates a `.pptx`** — title, "what we shipped" overview, one slide per major feature, fixes summary, what's next
+3. **Asks what to focus on** — one feature, a selection, or everything
+4. **Adapts to your audience** — high/medium/low technical depth changes the language, framing, and slide structure
+5. **Screenshots** *(optional)* — starts your local dev server and captures key screens
+6. **Generates a `.pptx`** — tailored to your focus and audience, saved to your project directory
 
 Output: `demo-YYYY-MM-DD.pptx` in your project directory, ready to open in Keynote or PowerPoint.
 
