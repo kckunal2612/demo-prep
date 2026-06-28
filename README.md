@@ -1,4 +1,4 @@
-# demo-prep
+# demo-prep 🎬
 
 **Turn your git history into a polished slide deck — in under two minutes.**
 
@@ -6,13 +6,13 @@ Engineers ship fast. Demo prep shouldn't slow them down. `demo-prep` is a Claude
 
 ---
 
-## See it in action
+## ✨ See it in action
 
 **Type `/demo-prep` and the skill appears instantly:**
 
 ![demo-prep commands in Claude Code](docs/screenshot-commands.png)
 
-**It asks two questions, then gets to work:**
+**It asks a few questions, then gets to work:**
 
 ![demo-prep interactive flow](docs/screenshot-flow.png)
 
@@ -26,7 +26,7 @@ Engineers ship fast. Demo prep shouldn't slow them down. `demo-prep` is a Claude
 
 ---
 
-## Real-world example: GitHub CLI
+## 🚀 Real-world example: GitHub CLI
 
 We ran `demo-prep` against [`cli/cli`](https://github.com/cli/cli) — one of GitHub's own most active repos — covering everything shipped in June 2026.
 
@@ -34,7 +34,7 @@ We ran `demo-prep` against [`cli/cli`](https://github.com/cli/cli) — one of Gi
 /demo-prep 2026-06-01
 ```
 
-**8 slides. 2 minutes.**
+**8 slides. 2 minutes. ⚡**
 
 ![demo-prep output for cli/cli — 8 slides in 2 minutes](docs/screenshot-cli-output.png)
 
@@ -42,7 +42,7 @@ One command. No deck template to fill in. No time spent deciding what to cut.
 
 ---
 
-## Install
+## 📦 Install
 
 ### Claude Code plugin
 
@@ -76,11 +76,11 @@ Or open `/plugins` in Codex, select the Demo Prep marketplace, and install `demo
 
 ---
 
-## Commands
+## 🎯 Commands
 
 | Command | What it does |
 |---|---|
-| `/demo-prep` | Full interactive flow — asks what to focus on and who the audience is |
+| `/demo-prep` | Full interactive flow — asks what to focus on, audience, and theme |
 | `/demo-prep 2026-05-01` | Same, but starting from a specific date or git tag |
 | `/demo-prep-tech high` | Skip the audience question, set technical depth directly (`high` / `medium` / `low`) |
 | `/demo-prep-pick` | Shows everything shipped as a numbered list — you pick what goes in the deck |
@@ -89,17 +89,32 @@ Or open `/plugins` in Codex, select the Demo Prep marketplace, and install `demo
 
 ---
 
-## How it works
+## 🎨 Themes
 
-1. **Finds the start point** — last `demo-*` tag → last version tag → 30 days ago. Shows you what it picked so you can override.
-2. **Reads your history** — commits, merged PRs, closed issues since that point.
-3. **Asks two questions** — what to focus on (one feature, a selection, or everything) and how technical the audience is.
-4. **Writes the deck** — language, framing, and slide structure adapt to your choices.
-5. **Saves `demo-YYYY-MM-DD.pptx`** to your project directory, ready to open in Keynote or PowerPoint.
+Pick a theme when prompted — or just hit enter for the default.
+
+| Theme | Vibe |
+|---|---|
+| `default` | Clean white, blue accents |
+| `dark` | Deep navy, indigo/violet accents |
+| `claude-code` | Near-black, Claude orange accents, monospace body font |
+| `codex` | Charcoal, OpenAI green accents |
+
+`claude-code` and `codex` are purpose-built for AI tool demos and internal eng reviews. They look sharp on dark-mode monitors and match the aesthetic your audience is already used to.
 
 ---
 
-## Requirements
+## ⚙️ How it works
+
+1. 🔍 **Finds the start point** — last `demo-*` tag → last version tag → 30 days ago. Shows you what it picked so you can override.
+2. 📖 **Reads your history** — commits, merged PRs, closed issues since that point.
+3. ❓ **Asks three questions** — what to focus on, how technical the audience is, and which theme to use.
+4. ✍️ **Writes the deck** — language, framing, slide structure, and colors adapt to your choices.
+5. 💾 **Saves `demo-YYYY-MM-DD.pptx`** to your project directory, ready to open in Keynote or PowerPoint.
+
+---
+
+## 🛠 Requirements
 
 - [Claude Code](https://claude.ai/code) and/or [Codex CLI](https://github.com/openai/codex)
 - `git`
@@ -107,7 +122,7 @@ Or open `/plugins` in Codex, select the Demo Prep marketplace, and install `demo
 
 ---
 
-## For plugin authors
+## 🔌 For plugin authors
 
 Claude Code uses the plugin manifest version when deciding whether an installed plugin needs an update. Bump `version` in `.claude-plugin/plugin.json` with each release.
 

@@ -34,13 +34,14 @@ basename $(git rev-parse --show-toplevel)
 
 Fall back to git log only if `gh` isn't available.
 
-## 3. Ask two questions
+## 3. Ask three questions
 
-One message, both questions together:
+One message, all questions together:
 
 > Found X features, Y fixes, Z infra changes since [date].
 > 1. What do you want to focus on? (one thing, or everything)
 > 2. How technical is the audience? (high / medium / low)
+> 3. Slide theme? (default / dark / claude-code / codex)
 
 ## 4. Adapt the deck
 
@@ -66,7 +67,18 @@ Use the `pptx` skill:
 - Slides 3–N: Feature(s), with screenshots where available
 - Last slide: What's next
 
-Clean modern theme, title ~36pt, body ~20pt. Save as `demo-YYYY-MM-DD.pptx` in the current directory.
+Apply the chosen theme. Title ~36pt, body ~20pt.
+
+| Theme | Background | Accent | Text | Body font |
+|---|---|---|---|---|
+| `default` | `#FFFFFF` | `#0066CC` | `#111111` | Calibri |
+| `dark` | `#0F172A` | `#6C63FF` | `#FFFFFF` | Calibri |
+| `claude-code` | `#1C1C1C` | `#D4774A` | `#FFFFFF` | Courier New |
+| `codex` | `#161616` | `#10A37F` | `#FFFFFF` | Calibri |
+
+For `claude-code` and `codex`: use the accent color for slide titles and callout text; body bullets in white; a thin accent-colored rule under each slide title.
+
+Save as `demo-YYYY-MM-DD.pptx` in the current directory.
 
 ## 7. Done
 
