@@ -1,0 +1,30 @@
+{
+  "name": "demo-prep",
+  "version": "1.0.0",
+  "description": "Turns your git history into a demo-ready slide deck. Reads commits, PRs, and issues since your last demo, then generates a tailored .pptx presentation.",
+  "author": {
+    "name": "Kunal Chawla",
+    "url": "https://github.com/kunalchawla"
+  },
+  "homepage": "https://github.com/kunalchawla/demo-prep",
+  "repository": "https://github.com/kunalchawla/demo-prep",
+  "license": "MIT",
+  "keywords": ["demo", "presentation", "git", "slides", "engineering"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Demo Prep",
+    "shortDescription": "Turn your git history into a demo slide deck",
+    "longDescription": "Reads commits, PRs, and issues since your last demo tag or a given date. Asks what to focus on and how technical the audience is, then generates a .pptx presentation tailored to the room.",
+    "developerName": "Kunal Chawla",
+    "category": "Productivity",
+    "capabilities": ["Instructions"],
+    "websiteURL": "https://github.com/kunalchawla/demo-prep",
+    "defaultPrompt": [
+      "Prep my demo since last sprint.",
+      "Generate a slide deck of what I shipped this month.",
+      "Make a demo presentation for the engineering all-hands.",
+      "I have a demo tomorrow — summarize what I built since v1.2.0.",
+      "Create a low-tech deck for my PM demo this week."
+    ]
+  }
+}

@@ -6,16 +6,22 @@ Engineers lose context between demos. `demo-prep` reads your commits, PRs, and i
 
 ## Install
 
+**Claude Code**
 ```bash
-claude mcp install github:kunalchawla/demo-prep
+claude plugin install github:kunalchawla/demo-prep
 ```
 
-Or clone and install locally:
+**Codex**
+```bash
+codex plugin install github:kunalchawla/demo-prep
+```
 
+Or clone and install locally for either tool:
 ```bash
 git clone https://github.com/kunalchawla/demo-prep
 cd demo-prep
-claude mcp install .
+claude plugin install .   # Claude Code
+codex plugin install .    # Codex
 ```
 
 ## Commands
