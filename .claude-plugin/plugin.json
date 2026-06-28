@@ -1,10 +1,14 @@
 {
   "name": "demo-prep",
   "version": "1.0.0",
-  "description": "Turns your git history into a demo-ready slide deck. Reads commits, PRs, and issues since your last demo, optionally captures screenshots, and generates a .pptx presentation.",
+  "description": "Turns git history into a demo-ready slide deck. Reads commits, PRs, and issues since a date or tag, asks what to focus on, and generates a tailored .pptx presentation.",
   "author": {
     "name": "Kunal Chawla",
-    "url": "https://github.com/kunalchawla"
+    "url": "https://github.com/kckunal2612"
   },
-  "skills": "./skills/"
+  "homepage": "https://github.com/kckunal2612/demo-prep",
+  "repository": "https://github.com/kckunal2612/demo-prep",
+  "license": "MIT",
+  "skills": "./skills/",
+  "commands": "./commands/"
 }
