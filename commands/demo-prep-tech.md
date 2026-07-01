@@ -3,7 +3,7 @@ description: Generate a demo deck at a set technical depth: high, medium, or low
 argument-hint: "[high|medium|low]"
 ---
 
-Run demo-prep with technical depth set to $ARGUMENTS (default: medium). Skip the audience question. Still ask what to focus on, then generate the deck.
+Run demo-prep with technical depth set to $ARGUMENTS (default: medium). Skip the audience question. Still ask what to focus on and how much effort to spend, then generate the deck.
 
 # Demo Prep
 
@@ -17,7 +17,7 @@ Tell the user in one line what you picked, then move on.
 
 ## 2. Gather
 
-Delegate this step to a subagent on `haiku` — running commands and bucketing results by title/label is mechanical pattern-matching, not judgment work, and it keeps the raw git/gh output out of your context.
+Delegate this step to a subagent on `sonnet` — this keeps the raw git/gh output out of your context. Avoid `haiku` for this: it has been observed to hallucinate PR titles/categories that aren't actually in the tool output, which is worse than the context savings are worth.
 
 Have the subagent run:
 
@@ -34,13 +34,21 @@ Titles and labels are enough to bucket work into features/fixes/infra and answer
 
 ## 3. Ask two questions
 
-One message, both questions together:
+One message, both together:
 
 > Found X features, Y fixes, Z infra changes since [date].
 > 1. What do you want to focus on? (one thing, or everything)
-> 2. How technical is the audience? (high / medium / low)
+> 2. Effort? (low / medium / high — default: medium)
 
-## 4. Adapt the deck
+## 4. Scale gather to the chosen effort
+
+**Low:** use the step 2 data as-is. No PR bodies are fetched at any point.
+
+**Medium (default):** use the step 2 data as-is. PR bodies are fetched later, in step 7, only for the PRs that make the final cut.
+
+**High:** re-run the gather yourself, on the default model rather than delegating to a subagent, with `gh pr list --state merged --limit 100 --json number,title,body,mergedAt,labels`. Full descriptions up front give a more reliable feature/fix/infra categorization and richer slide content.
+
+## 5. Adapt the deck
 
 **Focus — one thing:** build the whole deck around it; everything else gets one "also shipped" bullet at most.
 **Focus — everything:** top 3–5 features get slides; fixes and infra share one summary slide.
@@ -49,15 +57,19 @@ One message, both questions together:
 **Depth — medium:** lead with outcomes, one sentence of how.
 **Depth — low:** outcomes only, plain English, zero jargon.
 
-## 5. Screenshots (web only)
+## 6. Screenshots (web only)
 
-If `package.json` or a dev script exists, ask: "Capture screenshots? (y/n)"
+**Low:** skip screenshots entirely — don't ask.
+**Medium:** if `package.json` or a dev script exists, ask: "Capture screenshots? (y/n)"
+**High:** if `package.json` or a dev script exists, capture automatically — don't ask.
 
-If yes, use `run` + `preview_screenshot`. Only capture screens relevant to the focus.
+When capturing, use `run` + `preview_screenshot`. Only capture screens relevant to the focus.
 
-## 6. Generate
+## 7. Generate
 
-For each PR that made the final cut (the focus item, or the top 3–5 chosen features), fetch its full description now with `gh pr view <number> --json body` before writing its slide.
+**Low:** titles only — no PR bodies at any point.
+**Medium:** for each PR that made the final cut (the focus item, or the top 3–5 chosen features), fetch its full description now with `gh pr view <number> --json body` before writing its slide.
+**High:** bodies were already fetched in step 4 — use them directly.
 
 Use the `pptx` skill:
 
@@ -68,6 +80,6 @@ Use the `pptx` skill:
 
 Clean modern theme, title ~36pt, body ~20pt. Save as `demo-YYYY-MM-DD.pptx` in the current directory.
 
-## 7. Done
+## 8. Done
 
 One line: file path and slide count. Note any gaps only if material.
