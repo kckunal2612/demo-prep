@@ -15,7 +15,7 @@ Tell the user in one line what you picked, then move on.
 
 ## 2. Gather
 
-Delegate this step to a subagent on `haiku` — running commands and bucketing results by title/label is mechanical pattern-matching, not judgment work, and it keeps the raw git/gh output out of your context.
+Delegate this step to a subagent on `sonnet` — this keeps the raw git/gh output out of your context. Avoid `haiku` for this: it has been observed to hallucinate PR titles/categories that aren't actually in the tool output, which is worse than the context savings are worth.
 
 Have the subagent run:
 
@@ -46,7 +46,7 @@ One message, all questions together:
 
 **Medium (default):** use the step 2 data as-is. PR bodies are fetched later, in step 7, only for the PRs that make the final cut.
 
-**High:** re-run the gather yourself, on the default model rather than delegating to haiku, with `gh pr list --state merged --limit 100 --json number,title,body,mergedAt,labels`. Full descriptions up front give a more reliable feature/fix/infra categorization and richer slide content.
+**High:** re-run the gather yourself, on the default model rather than delegating to a subagent, with `gh pr list --state merged --limit 100 --json number,title,body,mergedAt,labels`. Full descriptions up front give a more reliable feature/fix/infra categorization and richer slide content.
 
 ## 5. Adapt the deck
 
