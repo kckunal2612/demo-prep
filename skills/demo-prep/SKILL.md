@@ -26,13 +26,14 @@ Tell the user in one line what you picked, then move on.
 
 ```bash
 git log --oneline --since="<date>" --no-merges        # or <ref>..HEAD
-gh pr list --state merged --limit 50 --json number,title,body,mergedAt,labels
+gh pr list --state merged --limit 50 --json number,title,mergedAt,labels
 gh issue list --state closed --limit 50 --json number,title,closedAt,labels
-gh pr list --state open --limit 20 --json number,title,labels
 basename $(git rev-parse --show-toplevel)
 ```
 
 Fall back to git log only if `gh` isn't available.
+
+Titles and labels are enough to bucket work into features/fixes/infra and answer the questions below — don't fetch PR bodies yet.
 
 ## 3. Ask three questions
 
@@ -59,6 +60,8 @@ If `package.json` or a dev script exists, ask: "Capture screenshots? (y/n)"
 If yes, use `run` + `preview_screenshot`. Only capture screens relevant to the focus.
 
 ## 6. Generate
+
+For each PR that made the final cut (the focus item, or the top 3–5 chosen features), fetch its full description now with `gh pr view <number> --json body` before writing its slide.
 
 Use the `pptx` skill:
 
