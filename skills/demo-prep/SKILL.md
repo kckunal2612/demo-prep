@@ -24,6 +24,10 @@ Tell the user in one line what you picked, then move on.
 
 ## 2. Gather
 
+Delegate this step to a subagent on `haiku` — running commands and bucketing results by title/label is mechanical pattern-matching, not judgment work, and it keeps the raw git/gh output out of your context.
+
+Have the subagent run:
+
 ```bash
 git log --oneline --since="<date>" --no-merges        # or <ref>..HEAD
 gh pr list --state merged --limit 50 --json number,title,body,mergedAt,labels
@@ -32,7 +36,7 @@ gh pr list --state open --limit 20 --json number,title,labels
 basename $(git rev-parse --show-toplevel)
 ```
 
-Fall back to git log only if `gh` isn't available.
+Fall back to git log only if `gh` isn't available. Have it return the project name, counts of features/fixes/infra, and a categorized list of {number, title, category, mergedAt, body} for each merged PR.
 
 ## 3. Ask three questions
 
