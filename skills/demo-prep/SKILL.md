@@ -35,7 +35,7 @@ gh issue list --state closed --limit 50 --json number,title,closedAt,labels
 basename $(git rev-parse --show-toplevel)
 ```
 
-Fall back to git log only if `gh` isn't available. Have it return the project name, counts of features/fixes/infra, and a categorized list of {number, title, category, mergedAt, body} for each merged PR.
+Fall back to git log only if `gh` isn't available. Have it return the project name, counts of features/fixes/infra, and a categorized list of {number, title, category, mergedAt} for each merged PR.
 
 Titles and labels are enough to bucket work into features/fixes/infra and answer the questions below — don't fetch PR bodies yet.
 
